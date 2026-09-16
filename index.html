@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiffLens — See what changed</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="header">
+<a class="brand" href="./index.html" aria-label="DiffLens home">
+<span aria-hidden="true">±</span> DiffLens
+</a>
+<span class="header-note">Small edits. Clear differences.</span>
+</header>
+
+<main id="main" tabindex="-1">
+<section class="intro" aria-labelledby="page-title">
+<p class="eyebrow">A CLEARER VIEW OF YOUR CODE</p>
+<h1 id="page-title">See what changed.<br>Understand what matters.</h1>
+<p>
+Compare two versions of text or code, line by line.
+Your input stays in this browser tab.
+</p>
+</section>
+
+<section class="workspace" aria-labelledby="editor-title">
+<div class="section-top">
+<div>
+<h2 id="editor-title">Compare versions</h2>
+<p class="muted">Paste your original and updated text below.</p>
+</div>
+<span class="badge">LOCAL COMPARISON</span>
+</div>
+
+<form id="compare-form">
+<div class="editors">
+<div class="editor">
+<div class="editor-heading">
+<label for="original">Original</label>
+<span>BEFORE</span>
+</div>
+<textarea
+id="original"
+spellcheck="false"
+autocapitalize="off"
+autocomplete="off"
+aria-describedby="input-help"
+placeholder="Paste your original code here..."
+></textarea>
+</div>
+
+<div class="editor">
+<div class="editor-heading">
+<label for="updated">Updated</label>
+<span>AFTER</span>
+</div>
+<textarea
+id="updated"
+spellcheck="false"
+autocapitalize="off"
+autocomplete="off"
+aria-describedby="input-help"
+placeholder="Paste your updated code here..."
+></textarea>
+</div>
+</div>
+
+<p class="muted input-help" id="input-help">
+Up to 500 lines and 50,000 characters per version.
+One side may be empty. Spaces and blank lines count.
+Inputs are not saved after closing or refreshing the page.
+</p>
+
+<div class="actions">
+<button class="primary" type="submit">Compare versions</button>
+<button id="swap" type="button">Swap versions</button>
+<button id="example" type="button">Load example</button>
+</div>
+<p class="muted">
+Load example replaces both inputs. Tab moves between controls;
+it does not insert indentation.
+</p>
+</form>
+</section>
+
+<p id="notice" class="notice" role="status" aria-atomic="true">
+Ready when you are. Paste two versions or load the example.
+</p>
+
+<section id="result-panel" class="result-panel"
+aria-labelledby="result-title" hidden>
+<div class="section-top">
+<div>
+<h2 id="result-title">Your comparison</h2>
+<p id="summary" class="muted"></p>
+</div>
+</div>
+
+<div class="result-controls">
+<label class="checkbox-label">
+<input id="changes-only" type="checkbox">
+Show changed lines only
+</label>
+
+<div class="navigation" aria-label="Change navigation">
+<button id="previous" type="button">← Previous change</button>
+<button id="next" type="button">Next change →</button>
+</div>
+</div>
+
+<p class="legend">
+<span class="added-label">+ Added</span>
+<span class="removed-label">− Removed</span>
+<span>Unmarked lines are unchanged</span>
+</p>
+
+<p id="navigation-status" role="status" aria-atomic="true"></p>
+
+<div class="column-headings" aria-hidden="true">
+<span>Old</span>
+<span>New</span>
+<span>±</span>
+<span>Code / text</span>
+</div>
+
+<ol id="diff-lines" class="diff-lines"
+aria-label="Line-by-line comparison"></ol>
+
+<p class="muted result-help">
+Old and New show line numbers. Navigation focuses each changed
+line; press Tab to return to the navigation controls.
+</p>
+</section>
+
+<details class="about">
+<summary>How this comparison works</summary>
+<p>
+DiffLens compares complete lines. An edited line appears as a
+removal followed by an addition. It does not execute your code.
+</p>
+<p>
+Windows and Unix line endings are treated equally. A final newline
+is significant and may appear as a blank-line change.
+Character-level highlighting and file uploads are not included.
+</p>
+</details>
+</main>
+
+<footer>
+DiffLens · Built by Diona Gerxhaliu · Independent learning project
+</footer>
+</body>
+</html>
