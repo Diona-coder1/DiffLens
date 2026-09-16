@@ -353,3 +353,9 @@ checks and published the demonstration.
 - Repeated lines can produce alternative valid alignments.
 - Input content is not persistently saved.
 - Manual verification is incomplete as documented above.
+
+## Design decisions
+
+See [DECISIONS.md](DECISIONS.md) for three design decisions,
+the alternatives reviewed, their costs, and a drawback observed
+during a manual comparison.
