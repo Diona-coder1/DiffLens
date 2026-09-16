@@ -346,7 +346,7 @@ Expected:
 | `style.css` | Layout, responsive styles and focus indicators |
 | `script.js` | Comparison algorithm, validation and interactions |
 | `README.md` | Setup, scope, reference comparison and verification |
-| `DECISIONS.md` | Design decisions, alternatives and trade-offs |
+| [DECISIONS.md](DECISIONS.md) | Design decisions, alternatives and trade-offs |
 | `.nojekyll` | Static-site configuration for GitHub Pages |
 
 ## Deployment and development history
