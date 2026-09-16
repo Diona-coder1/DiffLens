@@ -279,13 +279,17 @@ Press Load example, then Compare versions.
 
 Expected:
 
+```text
 3 added · 2 removed · 3 unchanged
+```
 
 ### Identical text
 
 Set both inputs to:
 
+```text
 hello
+```
 
 Expected: an identical-versions message and no changed lines.
 
@@ -295,29 +299,44 @@ Clear both inputs and compare.
 
 Expected: an explanatory validation message.
 
-Then leave Original empty and enter hello in Updated.
+Then leave Original empty and enter the following in Updated:
+
+```text
+hello
+```
 
 Expected:
 
+```text
 1 added · 0 removed · 0 unchanged
+```
 
 ### Repeated lines
 
+Enter each letter on its own line, without an extra newline
+after the final letter.
+
 Original:
 
+```text
 A
 B
 A
+```
 
 Updated:
 
+```text
 A
 A
 B
+```
 
 Expected:
 
+```text
 1 added · 1 removed · 2 unchanged
+```
 
 ## Project structure
 
